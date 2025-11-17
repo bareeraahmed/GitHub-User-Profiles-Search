@@ -1,0 +1,115 @@
+/* Background gradient */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000, #4a0000);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding-top: 40px;
+}
+
+
+/* Main container to center everything nicely */
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #ffdddd;
+}
+
+/* Search Bar */
+#usernameInput {
+    width: 80%;
+    padding: 15px;         /* height increase */
+    border-radius: 10px;   /* curve */
+    border: none;
+    outline: none;
+    font-size: 18px;       /* bigger text */
+}
+
+#searchBtn {
+    padding: 12px 22px;
+    margin-left: 10px;
+    margin-top: 35px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #aa0000;
+    color: white;
+    cursor: pointer;
+}
+
+#searchBtn:hover {
+    background: #cc0000;
+}
+
+/* Results container */
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 60px;
+}
+
+/* User card styling */
+.user-card {
+    flex: 0 0 calc(20% - 20px);  
+    text-align: center;
+}
+
+.user-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-card a {
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+/* User name */
+.user-card h3 {
+    margin: 10px 0;
+    color: #ffbbbb;
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin: 0 10px;
+    cursor: pointer;
+}
+#nextPage {
+    background-color: maroon;
+    color: white;          /* text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+
+#nextPage:hover {
+    background-color: #8b0000;  /* slightly darker on hover */
+}
