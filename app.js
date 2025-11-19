@@ -5,13 +5,11 @@ const searchBtn = document.getElementById("searchBtn");
 const usernameInput = document.getElementById("usernameInput");
 const resultsDiv = document.getElementById("results");
 
-// Loading indicator
 const loader = document.createElement("p");
 loader.textContent = "Searching...";
 loader.style.display = "none";
 document.body.appendChild(loader);
 
-// Event listener (Step 3)
 searchBtn.addEventListener("click", () => {
     const username = usernameInput.value.trim();
 
@@ -32,10 +30,9 @@ usernameInput.addEventListener("input", debounce(() => {
         clearResults();
     }
 
-}, 600));  // 600ms debounce delay
+}, 600));  
 
 
-// Fetch API + async (Step 4 upgraded)
 async function searchUsers(query) {
     if (!query.trim()) {
         resultsDiv.innerHTML = "";
@@ -48,10 +45,10 @@ async function searchUsers(query) {
         const response = await fetch(`https://api.github.com/search/users?q=${query}`);
         const data = await response.json();
 
-        allResults = data.items;       // store all results  
-        currentPage = 1;               // reset page  
+        allResults = data.items;      
+        currentPage = 1;              
 
-        renderPage();                  // show first 20  
+        renderPage();                 
     } 
     catch (error) {
         resultsDiv.innerHTML = "<p>Error fetching results.</p>";
@@ -99,7 +96,6 @@ function showPaginationButtons() {
 
     resultsDiv.appendChild(paginationDiv);
 
-    // event listeners
     if (totalPages > 1) {
         let nextBtn = document.querySelector("#nextPage");
         let prevBtn = document.querySelector("#prevPage");
@@ -121,7 +117,6 @@ function showPaginationButtons() {
 }
 
 
-// Display users (DOM Manipulation) — Step 5
 function displayUsers(users) {
     users.forEach(user => {
         const card = document.createElement("div");
@@ -138,7 +133,6 @@ function displayUsers(users) {
 }
 
 
-// Error handling (Step 6)
 function showError(message) {
     clearResults();
     
@@ -149,12 +143,10 @@ function showError(message) {
     resultsDiv.appendChild(errorMsg);
 }
 
-// Clear results helper
 function clearResults() {
     resultsDiv.innerHTML = "";
 }
 
-// Loading indicator (Step 7)
 function showLoader(isVisible) {
     loader.style.display = isVisible ? "block" : "none";
 }
